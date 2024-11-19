@@ -1,0 +1,26 @@
+[tool.poetry]
+name = "grim"
+version = "0.0.1"
+description = "A single-player MUD set in the world of Grim"
+authors = ["Vlek <derek@mccammond.org>"]
+readme = "README.md"
+packages = [{ include = "grim", from = "src" }]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+rich = "^13.9.4"
+
+[tool.poetry.group.dev.dependencies]
+isort = "^5.13.2"
+black = "^24.10.0"
+pytest = "^8.3.3"
+
+[tool.poetry.scripts]
+grim = "grim.__main__:main"
+
+[tool.isort]
+skip = ["__init__.py"]
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
