@@ -1,4 +1,4 @@
-from .eventloop import EventLoop
+from .app import GrimApp
 
 
-__all__: tuple[str] = (("EventLoop"),)
+__all__: tuple[str] = ("GrimApp",)

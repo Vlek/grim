@@ -9,6 +9,7 @@ packages = [{ include = "grim", from = "src" }]
 [tool.poetry.dependencies]
 python = "^3.10"
 rich = "^13.9.4"
+textual = "^0.86.3"
 
 [tool.poetry.group.dev.dependencies]
 isort = "^5.13.2"

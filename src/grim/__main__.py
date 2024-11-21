@@ -1,8 +1,8 @@
-from grim.client import EventLoop
+from grim.client import GrimApp
 
-eventloop = EventLoop()
+app = GrimApp()
 
 
 def main():
     print("hello grim!")
-    eventloop.run()
+    app.run()
