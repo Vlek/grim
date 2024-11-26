@@ -1,6 +1,6 @@
 from textual.app import App
 
-from .screens import StartScreen
+from .screens import SaveSelectionScreen, StartScreen
 
 
 class GrimApp(App):
@@ -21,7 +21,7 @@ class GrimApp(App):
     }
     """
 
-    SCREENS = {"start": StartScreen}
+    SCREENS = {"start": StartScreen, "saveselection": SaveSelectionScreen}
 
     def on_mount(self) -> None:
         self.push_screen("start")
