@@ -1,8 +1,12 @@
-from grim.client import GrimApp
+from dataconf import load
 
-app = GrimApp()
+from grim import GrimConfig
+from grim.client import GrimApp
 
 
 def main():
-    print("hello grim!")
+    config: GrimConfig = load("./config.yaml", GrimConfig)
+
+    app = GrimApp(config)
+
     app.run()

@@ -1,6 +1,7 @@
+from pygame import mixer
 from textual import events
 from textual.app import ComposeResult
-from textual.containers import Vertical
+from textual.containers import VerticalGroup
 from textual.screen import Screen
 from textual.widgets import Button, Static
 
@@ -26,12 +27,16 @@ class StartScreen(Screen):
         width: auto;
         height: auto;
     }
+    Vertical {
+        align: center middle;
+    }
     """
 
     def compose(self) -> ComposeResult:
-        yield Static(logo, id="title")
+        # yield Static(logo, id="title")
 
-        with Vertical():
+        with VerticalGroup():
+            yield Static(logo, id="title")
             yield Button("Play", id="play")
             yield Button("Quit", id="quit")
 
@@ -50,3 +55,8 @@ class StartScreen(Screen):
                 self.app.push_screen("saveselection")
             case "quit":
                 self.app.exit("Goodbye, thanks for playing.")
+
+    def on_mount(self) -> None:
+        mixer.init()
+        mixer.music.load("./static/intro.mp3")
+        mixer.music.play()
