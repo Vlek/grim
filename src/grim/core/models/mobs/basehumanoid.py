@@ -1,2 +1,3 @@
-class Player:
+class BaseHumanoid(BaseMob):
+
     def __init__(self) -> None: ...

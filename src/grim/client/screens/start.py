@@ -33,8 +33,6 @@ class StartScreen(Screen):
     """
 
     def compose(self) -> ComposeResult:
-        # yield Static(logo, id="title")
-
         with VerticalGroup():
             yield Static(logo, id="title")
             yield Button("Play", id="play")
@@ -57,6 +55,7 @@ class StartScreen(Screen):
                 self.app.exit("Goodbye, thanks for playing.")
 
     def on_mount(self) -> None:
-        mixer.init()
-        mixer.music.load("./static/intro.mp3")
-        mixer.music.play()
+        ...
+        # mixer.init()
+        # mixer.music.load("./static/intro.mp3")
+        # mixer.music.play()
